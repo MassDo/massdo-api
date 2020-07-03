@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=massdo_api
+POSTGRES_USER=IGHJxDzlMcwUfNERwykYgZaWCsuubhEr
+POSTGRES_PASSWORD=IMtgDvrBm1U8u9t5fwCx4mVT768Cj2SxHsNwxVnQoMzi7TdSHbKXRoCgKhWhc7li
