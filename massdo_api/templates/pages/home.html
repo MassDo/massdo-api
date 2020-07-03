@@ -1,1 +1,44 @@
 {% extends "base.html" %}
+
+{% block content %}
+<h2>Présentation</h2>
+    <br>
+    <p>Ce site est un démonstrateur simple d'api. Pour y acceder, il vous suffit d'être un utilisateur <strong>enregistré</strong> et <strong>vérifié</strong> par mail ! :)</p>
+    <p>L'api est constituée de 4 endpoints, qui permettent les opérations <strong>CRUD</strong>, ou des recherches avec <strong>filtres</strong>, sur la base de donnée:  <ul>
+        <strong> 
+            <li>farmer</li>
+            <li>product</li>
+            <li>certificate</li>
+            <li>search-prod-certif</li>
+        </strong>
+    </ul>  
+    <p>Pour plus d'informations sur son utilisation, vous pouvez consulter la <a href="https://documenter.getpostman.com/view/10973187/SzYbzHX1?version=latest" target="_blank">documentation</a>, générée à l'aide de <a href="https://www.postman.com/" target="_blank">Postman</a>.</p>
+<hr><hr>
+<h3>Applicatif</h3>
+<br>
+<p>La trame du projet est réalisée à l'aide de <a href="https://github.com/pydanny/cookiecutter-django" target="_blank">cookiecutter-django</a> et l'Api à l'aide de <a href="https://www.django-rest-framework.org/" target="_blank">Django REST framework</a>.</p>
+<hr><hr>
+<h3>Production</h3>   
+<br>
+<p>L'application est mise en production via conteneurs <a href="https://www.docker.com/" target="blank">docker</a>:
+    <ul>
+        <li>Conteneur <a href="https://docs.traefik.io/getting-started/quick-start/" target="blank">Traefik</a>  pour le reverse proxy et certification</li>
+        <li>Conteneur applicatif Django</li>
+        <li>Conteneur Postgres pour la base de donnée</li>
+        <li>Conteneur Redis (cache)</li>
+    </ul>
+</p> 
+<p>Ceux ci sont sur un serveur ubuntu d'instance EC2 AWS.</p>
+<hr><hr>
+<h3>Sécurité</h3>
+<br>
+<p>Certificats SSL/TLS via <a href="https://letsencrypt.org/fr/">letsencrypt</a></p>
+<p>Chiffrement des mots de passe à l'aide de l'algorithme <a href="https://fr.wikipedia.org/wiki/Argon2" target="blank">Argon2</a>.</p>
+<hr><hr>
+<p>Merci pour votre intérêt !</p>
+
+<p>Dorian Massoulier</p>
+
+<p><a href="#top">Back to top </a></p>
+
+{% endblock content %}

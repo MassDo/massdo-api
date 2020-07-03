@@ -1,0 +1,25 @@
+{% extends 'rest_framework/base.html' %}
+
+<!-- Modification du bloc Branding (en haut à gauche) -->
+{% block branding %}
+<a class='navbar-brand' rel="nofollow" href='{% url "home" %}'>
+    Home
+</a>
+<a class='navbar-brand' rel="nofollow" href='{% url "account_signup" %}'>
+    Création de compte
+</a>
+{% endblock %}
+{% block userlinks %}
+    {% if user.is_authenticated %}
+        <li>
+            <a href="{% url 'users:detail' request.user.username  %}">{{ request.user.username }}</a>
+        </li>
+        <li>
+            <a href="{% url 'account_logout' %}">Log out</a>
+        </li>
+    {% else %}
+        <li>
+            <a href="{% url 'account_login' %}">Log in</a>
+        </li>         
+    {% endif %}
+{% endblock %}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{% block title %}massdo-api{% endblock title %}</title>
+    <title>{% block title %}Massdo-api{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -22,7 +22,9 @@
     
 
     <!-- Your stuff: Third-party CSS libraries go here -->
-    
+
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+
     <!-- This file stores project-specific CSS -->
     
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
@@ -34,12 +36,12 @@
 
   <body>
 
-    <div class="mb-1">
-      <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div id='top' class="mb-1">
+      <nav class="navbar navbar-expand-md bg-secondary navbar-dark">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="{% url 'home' %}">massdo-api</a>
+        <a class="navbar-brand" href="https://massdo.github.io/" target="_blank">Portfolio</a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
@@ -47,12 +49,12 @@
               <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}">About</a>
+              <a class="nav-link" href="{% url 'api-root' %}">Api</a>
             </li>
             {% if request.user.is_authenticated %}
               <li class="nav-item">
                 {# URL provided by django-allauth/account/urls.py #}
-                <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
+                <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">Mon compte</a>
               </li>
               <li class="nav-item">
                 {# URL provided by django-allauth/account/urls.py #}
@@ -74,7 +76,7 @@
 
     </div>
 
-    <div class="container">
+    <div class="container bg-light">
 
       {% if messages %}
           {% for message in messages %}
